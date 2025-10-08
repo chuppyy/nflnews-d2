@@ -204,13 +204,13 @@ export async function getStaticProps({ params }: { params: any }) {
 
     // Pass parameters dynamically
     const parameters = {
-      videoScriptSrc: "https://nexvelar.digital/ads/nthotnews_boonovel_com.eb373146-0084-4675-83c9-23556caad088.video.js",
+      videoScriptSrc: "https://videoadstech.org/ads/topnews_livextop_com.0a05145f-8239-4054-9dc9-acd55fcdddd5.video.js",
       //Code auto 
       googleClientId: "ca-pub-2388584177550957",
       //GA tiêu đề
-      googleClientSlotId:"1510437842",
+      googleClientSlotId:"9127559985",
       //GA sau video
-      googleAdSlot: "2017688392",
+      googleAdSlot: "1932979136",
 //Cái sau
       mgWidgetId1: "1804971",
       //Cái trước
