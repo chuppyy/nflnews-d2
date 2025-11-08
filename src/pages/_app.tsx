@@ -2,6 +2,7 @@ import Head from "next/head";
 import App, { AppProps, AppContext } from "next/app";
 import Layout from "../layouts/layout";
 import '../globals.css'
+import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,20 +11,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {/* --- Mã FEJI (HEAD) --- */}
         {/* VIDEO PLAYER FEJI: Mã Player Script chính */}
-        <script id="feji-video-player-script" strategy="afterInteractive">
+        <Script id="feji-video-player-script" strategy="afterInteractive">
           {`
             (function(){let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",e="c3Jj",f="YXBwZW5kQ2hpbGQ=",g="aHR0cHM6Ly9jZG4udW5pYm90c2Nkbi5jb20vcGxheWVyL212cC9wbGF5ZXIuanM=",s=window[atob(a)][atob(b)](atob(c));s[atob(d)]=!0,s[atob(e)]=atob(g),window[atob(a)].head[atob(f)](s);})();
           `}
-        </script>
+        </Script>
         {/* VIDEO PLAYER FEJI: Mã Style ẩn logo */}
-        <script id="feji-video-player-style" strategy="afterInteractive">
+        <Script id="feji-video-player-style" strategy="afterInteractive">
           {`
             (function(){ var b64 = "PHN0eWxlPgphI3VicF9sb2dvIHsgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50OyB9Cjwvc3R5bGU+"; var html = atob(b64); document.head.insertAdjacentHTML("beforeend", html); })();
           `}
-        </script>
+        </Script>
 
         {/* BANNER FEJI: Mã Header Bidding Script chính */}
-        <script id="feji-banner-script" strategy="afterInteractive">
+        <Script id="feji-banner-script" strategy="afterInteractive">
           {`
             (function(){
               let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",
@@ -33,13 +34,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               window[atob(a)].head.appendChild(s);
             })();
           `}
-        </script>
+        </Script>
         {/* --- HẾT Mã FEJI (HEAD) --- */}
       </Head>
 
 {/* --- Mã BANNER FEJI (BODY Top) --- */}
       {/* Script khởi tạo Banner FEJI (Đặt ở đây hoặc trong Layout) */}
-      <script id="feji-banner-init" strategy="afterInteractive">
+      <Script id="feji-banner-init" strategy="afterInteractive">
         {`
           (function(){
             let a="d2luZG93",b="LnVuaWJvdHNoYiA9IHdpbmRvdy51bmlib3RzaGIgfHwg",
@@ -48,7 +49,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             Function(atob(a)+atob(b)+atob(c)+atob(a)+atob(d)+atob(e))();
           })();
         `}
-      </script>
+      </Script>
       {/* --- HẾT Mã BANNER FEJI (BODY Top) --- */}
       <Layout>
         <Component {...pageProps} />
