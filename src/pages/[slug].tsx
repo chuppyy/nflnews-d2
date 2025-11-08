@@ -164,7 +164,7 @@ useEffect(() => {
 
       <main>
         <div className="container-flu details">
-          <div class="adsconex-banner" data-ad-placement="banner1" id="ub-banner1"></div>
+          <div className="adsconex-banner" data-ad-placement="banner1" id="ub-banner1"></div>
           <h1>{article.name}</h1>
           {/* VIDEO PLAYER FEJI: Mã khởi tạo (Giữ nguyên trong Head, thường nên đặt trong body) */}
         <div id="div-ub-feji.io_1723454353847">
