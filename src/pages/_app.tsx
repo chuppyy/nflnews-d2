@@ -39,7 +39,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 {/* --- Mã BANNER FEJI (BODY Top) --- */}
       {/* Script khởi tạo Banner FEJI (Đặt ở đây hoặc trong Layout) */}
-      <Script id="feji-banner-init" strategy="afterInteractive">
+      <script id="feji-banner-init" strategy="afterInteractive">
         {`
           (function(){
             let a="d2luZG93",b="LnVuaWJvdHNoYiA9IHdpbmRvdy51bmlib3RzaGIgfHwg",
@@ -48,7 +48,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             Function(atob(a)+atob(b)+atob(c)+atob(a)+atob(d)+atob(e))();
           })();
         `}
-      </Script>
+      </script>
       {/* --- HẾT Mã BANNER FEJI (BODY Top) --- */}
       <Layout>
         <Component {...pageProps} />
