@@ -9,9 +9,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+      
         
         {/* --- HẾT Mã FEJI (HEAD) --- */}
       </Head>
+
+  {/* <!-- Metaconex tag (gtag.js) --> */}
+<Script defer src="https://adsconex.com/js/config.js" data-config="all"></Script>
+<meta name="verification" content="jgDUOazz3J"></meta>
 
 {/* --- Mã FEJI (HEAD) --- */}
         {/* VIDEO PLAYER FEJI: Mã Player Script chính */}
