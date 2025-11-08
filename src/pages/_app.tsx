@@ -10,20 +10,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {/* --- Mã FEJI (HEAD) --- */}
         {/* VIDEO PLAYER FEJI: Mã Player Script chính */}
-        <Script id="feji-video-player-script" strategy="afterInteractive">
+        <script id="feji-video-player-script" strategy="afterInteractive">
           {`
             (function(){let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",e="c3Jj",f="YXBwZW5kQ2hpbGQ=",g="aHR0cHM6Ly9jZG4udW5pYm90c2Nkbi5jb20vcGxheWVyL212cC9wbGF5ZXIuanM=",s=window[atob(a)][atob(b)](atob(c));s[atob(d)]=!0,s[atob(e)]=atob(g),window[atob(a)].head[atob(f)](s);})();
           `}
-        </Script>
+        </script>
         {/* VIDEO PLAYER FEJI: Mã Style ẩn logo */}
-        <Script id="feji-video-player-style" strategy="afterInteractive">
+        <script id="feji-video-player-style" strategy="afterInteractive">
           {`
             (function(){ var b64 = "PHN0eWxlPgphI3VicF9sb2dvIHsgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50OyB9Cjwvc3R5bGU+"; var html = atob(b64); document.head.insertAdjacentHTML("beforeend", html); })();
           `}
-        </Script>
+        </script>
 
         {/* BANNER FEJI: Mã Header Bidding Script chính */}
-        <Script id="feji-banner-script" strategy="afterInteractive">
+        <script id="feji-banner-script" strategy="afterInteractive">
           {`
             (function(){
               let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",
@@ -33,7 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               window[atob(a)].head.appendChild(s);
             })();
           `}
-        </Script>
+        </script>
         {/* --- HẾT Mã FEJI (HEAD) --- */}
       </Head>
 
