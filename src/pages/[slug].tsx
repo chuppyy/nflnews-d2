@@ -70,17 +70,17 @@ useEffect(() => {
 
   useEffect(() => {
     try {
-      var qcImgDiv = document.getElementById("qcImgk");
-      if (qcImgDiv) {
-        var insElement = document.createElement("ins");
-        insElement.className = "adsbygoogle";
-        insElement.style.display = "block";
-        insElement.setAttribute("data-ad-client", googleClientId);
-        insElement.setAttribute("data-ad-slot", googleAdSlot);
-        insElement.setAttribute("data-ad-format", "auto");
-        insElement.setAttribute("data-full-width-responsive", "true");
-        qcImgDiv.appendChild(insElement);
-      }
+      // var qcImgDiv = document.getElementById("qcImgk");
+      // if (qcImgDiv) {
+      //   var insElement = document.createElement("ins");
+      //   insElement.className = "adsbygoogle";
+      //   insElement.style.display = "block";
+      //   insElement.setAttribute("data-ad-client", googleClientId);
+      //   insElement.setAttribute("data-ad-slot", googleAdSlot);
+      //   insElement.setAttribute("data-ad-format", "auto");
+      //   insElement.setAttribute("data-full-width-responsive", "true");
+      //   qcImgDiv.appendChild(insElement);
+      // }
 
       
   
@@ -149,7 +149,7 @@ useEffect(() => {
         <meta property="og:image" content={article.avatarLink} />
         <meta property="og:title" content={article.name + "-" + article.userCode} />
       </Head>
-      <Script src={adsKeeperSrc} async></Script>
+      {/* <Script src={adsKeeperSrc} async></Script>
       <Script id="gg-1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
       <Script id="gg-2" strategy="lazyOnload">
         {`
@@ -160,7 +160,7 @@ useEffect(() => {
         `}
       </Script>
      
-      <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} />
+      <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} /> */}
 
       <main>
         <div className="container-flu details">
@@ -201,7 +201,7 @@ useEffect(() => {
           </Suspense>
         </div>
 
-        <div data-type="_mgwidget" data-widget-id={mgWidgetFeedId}></div>
+        {/* <div data-type="_mgwidget" data-widget-id={mgWidgetFeedId}></div>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -210,7 +210,7 @@ useEffect(() => {
             `,
           }}
           async
-        ></script>
+        ></script> */}
       </main>
       {/*<RewardedAd />*/}
     </>
