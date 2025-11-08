@@ -9,7 +9,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        {/* --- Mã FEJI (HEAD) --- */}
+        
+      </Head>
+{/* --- Mã FEJI (HEAD) --- */}
         {/* VIDEO PLAYER FEJI: Mã Player Script chính */}
         <Script id="feji-video-player-script" strategy="afterInteractive">
           {`
@@ -36,8 +38,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           `}
         </Script>
         {/* --- HẾT Mã FEJI (HEAD) --- */}
-      </Head>
-
 {/* --- Mã BANNER FEJI (BODY Top) --- */}
       {/* Script khởi tạo Banner FEJI (Đặt ở đây hoặc trong Layout) */}
       <Script id="feji-banner-init" strategy="afterInteractive">
