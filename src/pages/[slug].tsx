@@ -184,9 +184,30 @@ useEffect(() => {
             `}
           </script>
         </div>
+{/* Banner FEJI */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.unibotshb = window.unibotshb || { cmd: [] };
+            unibotshb.cmd.push(()=>{ ubHB("feji.io_long"); });
+          `
+        }}
+      />
+      
+      {/* Video Player FEJI */}
+      <div id="div-ub-feji.io_1723454353847">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.unibots = window.unibots || { cmd: [] };
+              unibots.cmd.push(function() { unibotsPlayer("feji.io_1723454353847") });
+            `
+          }}
+        />
+      </div>
 
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
-          <ins
+          {/* <ins
             className="adsbygoogle"
             style={{ display: 'block' }}
             data-ad-client={googleClientId}
@@ -195,7 +216,7 @@ useEffect(() => {
             data-full-width-responsive="true"
           />
           <div id="player_dev"></div>
-          <div id="div-ub-boonovel.com_1703240626524"></div>
+          <div id="div-ub-boonovel.com_1703240626524"></div> */}
           <Suspense fallback={<p>Loading ...</p>}>
             <article className="content" dangerouslySetInnerHTML={{ __html: article.content }} />
           </Suspense>
