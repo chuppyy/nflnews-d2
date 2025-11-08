@@ -82,32 +82,38 @@ useEffect(() => {
         qcImgDiv.appendChild(insElement);
       }
 
-      /*var qcDivqc3 = document.getElementById("qcmgidgb3");
-      if (qcDivqc3) {
-        var newDiv = document.createElement('div');
-        newDiv.innerHTML = `<div data-type="_mgwidget" data-widget-id="${mgWidgetId1}"></div>
-                            <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>`;
-        qcDivqc3.appendChild(newDiv);
-      }*/
-  var qcDivqc2 = document.getElementById("qcmgidgb2");
-      if (qcDivqc2) {
-       var insElement = document.createElement("ins");
-        insElement.className = "adsbygoogle";
-        insElement.style.display = "block";
-        insElement.setAttribute("data-ad-client", googleClientId);
-        insElement.setAttribute("data-ad-slot", googleAdSlot);
-        insElement.setAttribute("data-ad-format", "auto");
-        insElement.setAttribute("data-full-width-responsive", "true");
-        qcDivqc2.appendChild(insElement);
-      }
-      /*
+      
+  
       var qcDiv = document.getElementById("qcmgidgb");
       if (qcDiv) {
         var newDiv = document.createElement('div');
-        newDiv.innerHTML = `<div data-type="_mgwidget" data-widget-id="${mgWidgetId2}"></div>
-                            <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>`;
+        // Thêm div Banner inpage vào
+        newDiv.innerHTML = `
+          <div class="adsconex-banner-parallax" data-ad-placement="banner20" id="div_ub_inpage20"></div>          
+        `;
         qcDiv.appendChild(newDiv);
-      }*/
+      }
+      var qcDivqc2 = document.getElementById("qcmgidgb2");
+      if (qcDivqc2) {
+       var newDiv2 = document.createElement('div');
+        // Thêm div Banner inpage vào
+        newDiv2.innerHTML = `
+          <div class="adsconex-banner" data-ad-placement="banner1" id="ub-banner1"></div>          
+        `;
+        qcDivqc2.appendChild(newDiv2);
+      }
+
+      var qcDivqc3 = document.getElementById("qcmgidgb3");
+      if (qcDivqc3) {
+        var newDiv = document.createElement('div');
+        // Thêm div Banner inpage vào
+        newDiv.innerHTML = `
+          <div class="adsconex-banner-parallax" data-ad-placement="banner20" id="div_ub_inpage21"></div>          
+        `;
+        qcDivqc3.appendChild(newDiv);
+      }
+
+
 
       const ads = document.getElementsByClassName("adsbygoogle").length;
       for (var i = 0; i < ads; i++) {
@@ -139,6 +145,7 @@ useEffect(() => {
     <>
       <Head>
         <title>{article.name + "-" + article.userCode}</title>
+        
         <meta property="og:image" content={article.avatarLink} />
         <meta property="og:title" content={article.name + "-" + article.userCode} />
       </Head>
@@ -159,6 +166,25 @@ useEffect(() => {
         <div className="container-flu details">
           
           <h1>{article.name}</h1>
+          {/* VIDEO PLAYER FEJI: Mã khởi tạo (Giữ nguyên trong Head, thường nên đặt trong body) */}
+        <div id="div-ub-feji.io_1723454353847">
+          <script>
+            {`
+              (function() {
+                  let w = String.fromCharCode(119, 105, 110, 100, 111, 119),
+                      c = String.fromCharCode(99, 109, 100),
+                      ub = String.fromCharCode(117, 110) + String.fromCharCode(105, 98, 111) + String.fromCharCode(116, 115),
+                      f = String.fromCharCode(117, 110, 105, 98, 111, 116, 115, 80, 108, 97, 121, 101, 114);
+
+                  window[w] = window[w] || {};
+                  window[w][ub] = window[w][ub] || {};
+                  window[w][ub][c] = window[w][ub][c] || [];
+                  window[w][ub][c].push(() => eval(f + "('feji.io_1723454353847')"));
+              })();
+            `}
+          </script>
+        </div>
+
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
           <ins
             className="adsbygoogle"
