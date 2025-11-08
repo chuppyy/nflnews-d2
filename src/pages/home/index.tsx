@@ -84,6 +84,7 @@ export default function Home(props: any) {
                     width={300}
                     height={300}
                     priority
+                    unoptimized
                   />
                   <p className="new-title">{item.name}</p>
 
