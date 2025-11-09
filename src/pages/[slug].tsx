@@ -115,13 +115,13 @@ useEffect(() => {
 
 
 
-      const ads = document.getElementsByClassName("adsbygoogle").length;
-      for (var i = 0; i < ads; i++) {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-      }
-    } catch (err) {
-      console.error("Error with ads", err);
-    }
+    //   const ads = document.getElementsByClassName("adsbygoogle").length;
+    //   for (var i = 0; i < ads; i++) {
+    //     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //   }
+    // } catch (err) {
+    //   console.error("Error with ads", err);
+    // }
 
     // Adjust iframe dimensions
     const iframes = document.querySelectorAll("iframe");
@@ -139,6 +139,9 @@ useEffect(() => {
         }
       }
     });
+    }catch (err) {
+    console.error("Error with ads", err);
+  }
   }, [googleClientId, googleAdSlot, mgWidgetId1, mgWidgetId2]);
 
   return (
