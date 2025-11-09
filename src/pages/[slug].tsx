@@ -152,7 +152,7 @@ useEffect(() => {
         <meta property="og:image" content={article.avatarLink} />
         <meta property="og:title" content={article.name + "-" + article.userCode} />
       </Head>
-      {/* <Script src={adsKeeperSrc} async></Script>
+       <Script src={adsKeeperSrc} async></Script>
       <Script id="gg-1" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} />
       <Script id="gg-2" strategy="lazyOnload">
         {`
@@ -161,9 +161,9 @@ useEffect(() => {
           gtag('js', new Date());
           gtag('config', '${googleTagId}');
         `}
-      </Script>
+      </Script> 
      
-      <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} /> */}
+      {/* <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} />  */}
 
       <main>
         <div className="container-flu details">
