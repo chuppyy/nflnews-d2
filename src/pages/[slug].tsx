@@ -129,9 +129,9 @@ useEffect(() => {
       for (var i = 0; i < ads; i++) {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
       }
-    } catch (err) {
-      console.error("Error with ads", err);
-    }
+    // } catch (err) {
+    //   console.error("Error with ads", err);
+    // }
 
     // Adjust iframe dimensions
     const iframes = document.querySelectorAll("iframe");
