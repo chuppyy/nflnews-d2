@@ -103,11 +103,35 @@ export default function Home(props: any) {
 
 export const getServerSideProps: GetServerSideProps<any> = async () => {
   try {
-    const response = await axios.get(`${process.env.APP_API2}/News/news-list`);
-    console.log("response", response);
+    // const response = await axios.get(`${process.env.APP_API2}/News/news-list`);
+    // console.log("response", response);
+    // return {
+    //   props: { data: response.data.data },
+    // };
+
+const groupModel = [
+      "d01a8b56-2987-4e28-aaad-23ca0d741e4a",
+      "dfcfd087-1d55-49d4-9f12-976852062200",
+      "b2b4f2c2-69e9-4750-9feb-dbfc1d839b15",
+      "2196a244-0ec0-4579-89fe-49e4c3781839"
+    ];
+    const numberOf = 4;
+
+    const response = await axios.post(
+      `${process.env.APP_API2}/News/news-list?numberOf=${numberOf}`,
+      groupModel, // body
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     return {
       props: { data: response.data.data },
     };
+
+
+
   } catch (error) {
     console.error("Error fetching data:", error);
     return {
