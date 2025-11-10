@@ -113,22 +113,22 @@ useEffect(() => {
         qcDivqc3.appendChild(newDiv);
       }
 
-      var qcDivqc4 = document.getElementById("qcmgidgb4");
-      if (qcDivqc4) {
-       var newDiv4 = document.createElement('div');
-        // Thêm div Banner inpage vào
-        newDiv4.innerHTML = `
-          <div class="adsconex-banner" data-ad-placement="banner3" id="ub-banner3"></div>          
-        `;
-        qcDivqc4.appendChild(newDiv4);
-      }
+      // var qcDivqc4 = document.getElementById("qcmgidgb4");
+      // if (qcDivqc4) {
+      //  var newDiv4 = document.createElement('div');
+      //   // Thêm div Banner inpage vào
+      //   newDiv4.innerHTML = `
+      //     <div class="adsconex-banner" data-ad-placement="banner3" id="ub-banner3"></div>          
+      //   `;
+      //   qcDivqc4.appendChild(newDiv4);
+      // }
 
 
 
-      const ads = document.getElementsByClassName("adsbygoogle").length;
-      for (var i = 0; i < ads; i++) {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-      }
+      // const ads = document.getElementsByClassName("adsbygoogle").length;
+      // for (var i = 0; i < ads; i++) {
+      //   ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      // }
     // } catch (err) {
     //   console.error("Error with ads", err);
     // }
