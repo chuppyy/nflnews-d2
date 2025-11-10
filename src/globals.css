@@ -30,6 +30,10 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
   width: 100%;
   height: auto;
 }
+.content {
+  font-size: 30px;
+}
+
 /* navbar */
 .navbar {
   background-color: #333;
