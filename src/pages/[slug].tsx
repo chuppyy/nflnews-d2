@@ -98,7 +98,7 @@ useEffect(() => {
        var newDiv2 = document.createElement('div');
         // Thêm div Banner inpage vào
         newDiv2.innerHTML = `
-          <div class="adsconex-banner" data-ad-placement="banner1" id="ub-banner2"></div>          
+          <div class="adsconex-banner" data-ad-placement="banner2" id="ub-banner2"></div>          
         `;
         qcDivqc2.appendChild(newDiv2);
       }
@@ -108,9 +108,19 @@ useEffect(() => {
         var newDiv = document.createElement('div');
         // Thêm div Banner inpage vào
         newDiv.innerHTML = `
-          <div class="adsconex-banner-parallax" data-ad-placement="banner20" id="div_ub_inpage21"></div>          
+          <div class="adsconex-banner-parallax" data-ad-placement="banner21" id="div_ub_inpage21"></div>          
         `;
         qcDivqc3.appendChild(newDiv);
+      }
+
+      var qcDivqc4 = document.getElementById("qcmgidgb4");
+      if (qcDivqc4) {
+       var newDiv4 = document.createElement('div');
+        // Thêm div Banner inpage vào
+        newDiv4.innerHTML = `
+          <div class="adsconex-banner" data-ad-placement="banner3" id="ub-banner3"></div>          
+        `;
+        qcDivqc4.appendChild(newDiv4);
       }
 
 
