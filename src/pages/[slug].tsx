@@ -22,68 +22,8 @@ export default function Page(data: any) {
     googleTagId,
   } = data.parameters;
 
-  // // QC video
-  // useEffect(() => {
-  //   const scriptElement = document.createElement("script");
-  //   scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
-  //   scriptElement.async = true;
-  //   const scriptContainer = document.getElementById("player_dev");
-  //   if (scriptContainer) {
-  //     scriptContainer.appendChild(scriptElement);
-  //   }
-  //   return () => {
-  //     if (scriptContainer) {
-  //       scriptContainer.removeChild(scriptElement);
-  //     }
-  //   };
-  // }, [videoScriptSrc]);
-
-/*
-useEffect(() => {
-  // New Script
-  const script = document.createElement("script");
-  script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
-    Math.random() * 1000
-  )}`;
-  script.async = true;
-  document.head.appendChild(script);
-  // Ensure the script runs once the component mounts
-  const script2 = document.createElement("script");
-  script2.innerHTML = `
-      window.unibots = window.unibots || { cmd: [] };
-      unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-  `;
-  const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
-  if(scriptContainer) {
-    scriptContainer.appendChild(script2);
-  }
-  
-  // Cleanup function to remove the script when the component unmounts
-  return () => {
-    const div = document.getElementById("div-ub-boonovel.com_1703240626524");
-    if (div) {
-      div.innerHTML = "";
-    }
-  };
-}, []);*/
-
-
   useEffect(() => {
     try {
-      // var qcImgDiv = document.getElementById("qcImgk");
-      // if (qcImgDiv) {
-      //   var insElement = document.createElement("ins");
-      //   insElement.className = "adsbygoogle";
-      //   insElement.style.display = "block";
-      //   insElement.setAttribute("data-ad-client", googleClientId);
-      //   insElement.setAttribute("data-ad-slot", googleAdSlot);
-      //   insElement.setAttribute("data-ad-format", "auto");
-      //   insElement.setAttribute("data-full-width-responsive", "true");
-      //   qcImgDiv.appendChild(insElement);
-      // }
-
-      
-  
       var qcDiv = document.getElementById("qcmgidgb");
       if (qcDiv) {
         var newDiv = document.createElement('div');
@@ -122,6 +62,46 @@ useEffect(() => {
         `;
         qcDivqc4.appendChild(newDiv4);
       }
+
+      var qcDivqc5 = document.getElementById("qcmgidgb5");
+if (qcDivqc5) {
+  var newDiv5 = document.createElement('div');
+  // Thêm div Banner inpage vào
+  newDiv5.innerHTML = `
+    <div class="adsconex-banner" data-ad-placement="banner4" id="ub-banner4"></div>          
+  `;
+  qcDivqc5.appendChild(newDiv5);
+}
+
+var qcDivqc6 = document.getElementById("qcmgidgb6");
+if (qcDivqc6) {
+  var newDiv6 = document.createElement('div');
+  // Thêm div Banner inpage vào
+  newDiv6.innerHTML = `
+    <div class="adsconex-banner" data-ad-placement="banner5" id="ub-banner5"></div>          
+  `;
+  qcDivqc6.appendChild(newDiv6);
+}
+
+var qcDivqc7 = document.getElementById("qcmgidgb7");
+if (qcDivqc7) {
+  var newDiv7 = document.createElement('div');
+  // Thêm div Banner inpage vào
+  newDiv7.innerHTML = `
+    <div class="adsconex-banner" data-ad-placement="banner6" id="ub-banner6"></div>          
+  `;
+  qcDivqc7.appendChild(newDiv7);
+}
+
+var qcDivqc8 = document.getElementById("qcmgidgb8");
+if (qcDivqc8) {
+  var newDiv8 = document.createElement('div');
+  // Thêm div Banner inpage vào
+  newDiv8.innerHTML = `
+    <div class="adsconex-banner" data-ad-placement="banner7" id="ub-banner7"></div>          
+  `;
+  qcDivqc8.appendChild(newDiv8);
+}
 
 
 
