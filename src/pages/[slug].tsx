@@ -241,7 +241,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: any }) {
   try {
     const slug = params?.slug;
-    const response = await fetch(`${process.env.APP_API}/News/news-detail?id=${slug?.slice(slug?.lastIndexOf("-") + 1)}`).then((res) => res.json());
+    const response = await fetch(`${process.env.APP_API}/News/news-detailnew?id=${slug?.slice(slug?.lastIndexOf("-") + 1)}`).then((res) => res.json());
 
     // Pass parameters dynamically
     const parameters = {
