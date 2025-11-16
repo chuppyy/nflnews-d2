@@ -225,7 +225,7 @@ if (qcDivqc8) {
           </Suspense>
         </div>
         {/* Giua bai */}
-      <script
+      {/* <script
         dangerouslySetInnerHTML={{
           __html: `
             window._taboola = window._taboola || [];
@@ -237,7 +237,7 @@ if (qcDivqc8) {
             });
           `,
         }}
-      ></script>
+      ></script> */}
 {/* ================================= */}
 {/* CuoiBai */}
         <div id="taboola-below-article-thumbnails"></div>
@@ -255,14 +255,14 @@ if (qcDivqc8) {
   }}
 ></script>
 
-      {/* <script
+      <script
         dangerouslySetInnerHTML={{
           __html: `
             window._taboola = window._taboola || [];
             _taboola.push({ flush: true });
           `,
         }}
-      ></script> */}
+      ></script>
 {/* ============================= */}
 
 
