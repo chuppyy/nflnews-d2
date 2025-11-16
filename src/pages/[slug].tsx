@@ -24,6 +24,16 @@ export default function Page(data: any) {
 
   useEffect(() => {
     try {
+
+    var qcDivTaboo = document.getElementById("qctaboo-mid");
+      if (qcDivTaboo) {
+        var newDiv = document.createElement('div');
+        // Thêm div Banner inpage vào
+        newDiv.innerHTML = `
+          <div id="taboola-below-mid-article"></div>          
+        `;
+        qcDivTaboo.appendChild(newDiv);
+      }
       var qcDiv = document.getElementById("qcmgidgb");
       if (qcDiv) {
         var newDiv = document.createElement('div');
@@ -214,6 +224,47 @@ if (qcDivqc8) {
             <article className="content" dangerouslySetInnerHTML={{ __html: article.content }} />
           </Suspense>
         </div>
+        {/* Giua bai */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window._taboola = window._taboola || [];
+            _taboola.push({
+              mode: 'thumbs-feed-01-b',
+              container: 'taboola-below-mid-article',
+              placement: 'Mid article',
+              target_type: 'mix'
+            });
+          `,
+        }}
+      ></script>
+{/* ================================= */}
+{/* CuoiBai */}
+        <div id="taboola-below-article-thumbnails"></div>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'thumbs-feed-01',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails',
+        target_type: 'mix'
+      });
+    `,
+  }}
+></script>
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window._taboola = window._taboola || [];
+            _taboola.push({ flush: true });
+          `,
+        }}
+      ></script>
+{/* ============================= */}
+
 
         {/* <div data-type="_mgwidget" data-widget-id={mgWidgetFeedId}></div>
         <script

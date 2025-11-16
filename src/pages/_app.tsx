@@ -10,11 +10,36 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
 <script async src="https://cdn.unibotscdn.com/player/mvp/player.js"></script>
-<script async src="https://cdn.unibots.in/headerbidding/common/hb.js"></script>
-      
+<script async src="https://cdn.unibots.in/headerbidding/common/hb.js"></script>     
         
         {/* --- HẾT Mã FEJI (HEAD) --- */}
       </Head>
+{/* 🔥 TABOOLA SCRIPT — đặt ngoài HEAD */}
+<Script id="taboola-script" strategy="afterInteractive">
+  {`
+    window._taboola = window._taboola || [];
+    _taboola.push({article:'auto'});
+    !function (e, f, u, i) {
+      if (!document.getElementById(i)){
+        e.async = 1;
+        e.src = u;
+        e.id = i;
+        f.parentNode.insertBefore(e, f);
+      }
+    }(
+      document.createElement('script'),
+      document.getElementsByTagName('script')[0],
+      '//cdn.taboola.com/libtrc/metaconex-nflnewsfejiio/loader.js',
+      'tb_loader_script'
+    );
+
+    if(window.performance && typeof window.performance.mark === 'function') {
+      window.performance.mark('tbl_ic');
+    }
+  `}
+</Script>
+
+
 
   {/* <!-- Metaconex tag (gtag.js) --> */}
 <Script defer src="https://adsconex.com/js/config.js" data-config="all" strategy="beforeInteractive"></Script>
