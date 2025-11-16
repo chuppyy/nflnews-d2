@@ -241,7 +241,7 @@ if (qcDivqc8) {
 {/* ================================= */}
 {/* CuoiBai */}
         <div id="taboola-below-article-thumbnails"></div>
-<script
+{/* <script
   dangerouslySetInnerHTML={{
     __html: `
       window._taboola = window._taboola || [];
@@ -253,7 +253,7 @@ if (qcDivqc8) {
       });
     `,
   }}
-></script>
+></script> */}
 
       <script
         dangerouslySetInnerHTML={{
