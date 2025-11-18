@@ -266,7 +266,7 @@ if (qcDivqc8) {
 {/* ============================= */}
 
 
-        {/* <div data-type="_mgwidget" data-widget-id={mgWidgetFeedId}></div>
+        <div data-type="_mgwidget" data-widget-id={mgWidgetFeedId}></div>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -275,7 +275,7 @@ if (qcDivqc8) {
             `,
           }}
           async
-        ></script> */}
+        ></script>
       </main>
       {/*<RewardedAd />*/}
     </>
@@ -308,9 +308,9 @@ export async function getStaticProps({ params }: { params: any }) {
       //Cái trước
       mgWidgetId2: "1865915",
 
-      mgWidgetFeedId: "1865914",
+      mgWidgetFeedId: "1893848",
       //scrip adkeeper
-      adsKeeperSrc: "https://jsc.adskeeper.com/site/1055717.js",
+      adsKeeperSrc: "https://jsc.mgid.com/site/1063588.js",
       //Analytic
       googleTagId: "G-J5DGVXB1TH",
     };
