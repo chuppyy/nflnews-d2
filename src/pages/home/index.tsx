@@ -1,14 +1,29 @@
-import Image from "next/image";
-import { GetServerSideProps } from "next";
-import axios from "axios";
-import React from "react";
-import Link from "next/link";
+// pages/index.tsx
 
-export default function Home(props: any) {
-  const { data } = props;
-  console.log(data);
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+
+interface NewsItem {
+  id: string;
+  name: string;
+  avatarLink: string;
+}
+
+interface NewsGroup {
+  groupName: string;
+  detail: NewsItem[];
+}
+
+interface HomeProps {
+  data: NewsGroup[];
+}
+
+export default function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="container">
+      {/* BANNER */}
       <div className="banner-container">
         <div className="banner-custom">
           <div className="banner">
@@ -18,76 +33,71 @@ export default function Home(props: any) {
               className="image-full"
               width={500}
               height={300}
-              priority
+              priority // chỉ ưu tiên 1 hình lớn nhất
             />
-           
           </div>
         </div>
+
         <div className="banner-item">
           <div className="banner">
             <Image
               src="/hinh1.png"
-              alt="hinh0"
+              alt="hinh1"
               className="image-full"
               width={500}
               height={300}
-              priority
             />
-          
           </div>
           <div className="banner">
             <Image
               src="/hinh2.png"
-              alt="hinh0"
+              alt="hinh2"
               className="image-full"
               width={500}
               height={300}
-              priority
             />
-          
           </div>
           <div className="banner">
             <Image
               src="/hinh3.png"
-              alt="hinh0"
+              alt="hinh3"
               className="image-full"
               width={500}
               height={300}
-              priority
             />
-          
           </div>
           <div className="banner">
             <Image
               src="/hinh4.png"
-              alt="hinh0"
+              alt="hinh4"
               className="image-full"
               width={500}
               height={300}
-              priority
             />
-           
           </div>
         </div>
       </div>
+
+      {/* LIST TIN */}
       <div className="news-container">
-        {data.map((group: any, index: number) => (
-          <React.Fragment key={index}>
+        {data.map((group, index) => (
+          <React.Fragment key={group.groupName || index}>
             <h1>{group.groupName}</h1>
             <div className="news-list">
-              {group.detail.map((item: any, idx: number) => (
-                <div className="news-item" key={idx}>
+              {group.detail.map((item) => (
+                <div className="news-item" key={item.id}>
                   <Image
                     src={item.avatarLink}
                     alt={item.name}
                     className="image-full"
                     width={300}
                     height={300}
-                    priority
+                    // Nếu bạn cấu hình domain ảnh trong next.config, có thể bỏ `unoptimized`
                     unoptimized
                   />
                   <p className="new-title">{item.name}</p>
 
+                  {/* Nếu chi tiết đang ở /[slug] thì sửa lại href thành slug phù hợp */}
                   <Link className="read-more" href={`/${item.id}`}>
                     Read more...
                   </Link>
@@ -101,41 +111,27 @@ export default function Home(props: any) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<any> = async () => {
+// ✅ Dùng SSG + ISR: cache HTML + data, tự rebuild sau X giây
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   try {
-    const response = await axios.get(`${process.env.APP_API2}/News/news-list`);
-    console.log("response", response);
+    const res = await fetch(`${process.env.APP_API2}/News/news-list`);
+    const json = await res.json();
+
     return {
-      props: { data: response.data.data },
+      props: {
+        data: (json.data || []) as NewsGroup[],
+      },
+      // ISR: cache trang chủ trong 120s, sau đó lần truy cập tiếp theo sẽ regenerate
+      revalidate: 120, // 2 phút – chỉnh 60/300 tuỳ mức độ realtime bạn muốn
     };
-
-// const groupModel = [
-//       "d01a8b56-2987-4e28-aaad-23ca0d741e4a",
-//       "dfcfd087-1d55-49d4-9f12-976852062200",
-//       "b2b4f2c2-69e9-4750-9feb-dbfc1d839b15",
-//       "2196a244-0ec0-4579-89fe-49e4c3781839"
-//     ];
-//     const numberOf = 4;
-
-//     const response = await axios.get(
-//       `${process.env.APP_API2}/News/news-list?numberOf=${numberOf}`,
-//       groupModel, // body
-//       {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       }
-//     );
-//     return {
-//       props: { data: response.data.data },
-//     };
-
-
-
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching home data:", error);
+
     return {
-      props: { data: [] as any[] }, // Sử dụng any type cho data
+      props: {
+        data: [],
+      },
+      revalidate: 60, // vẫn cache 1 chút, tránh lỗi là rebuild liên tục
     };
   }
 };
